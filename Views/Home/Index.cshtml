@@ -1,0 +1,158 @@
+﻿@model List<Examen_tecnico_COA.Models.Usuario>
+
+@if (Model != null)
+{
+    <html>
+    <head>
+       <!-- <style>
+ 
+
+            body {
+                background-color: cornflowerblue;
+                position: relative;
+            }
+
+            .footer {
+                text-align: center;
+                background-color: aliceblue;
+                padding-top: 150px;
+                margin-top: 150px;
+                padding-bottom: 30px;
+            }
+
+            .jumbotron {
+                background-color: aliceblue;
+                text-align: center;
+            }
+
+            .button {
+                display: inline-block;
+                border-radius: 4px;
+                background-color: hotpink;
+                border: none;
+                color: #FFFFFF;
+                text-align: center;
+                font-size: 16px;
+                padding: 10px;
+                width: 200px;
+                transition: all 0.5s;
+                cursor: pointer;
+                margin: 5px;
+            }
+
+                .button span {
+                    cursor: pointer;
+                    display: inline-block;
+                    position: relative;
+                    transition: 0.5s;
+                }
+
+                    .button span:after {
+                        content: '\00bb';
+                        position: absolute;
+                        opacity: 0;
+                        top: 0;
+                        right: -20px;
+                        transition: 0.5s;
+                    }
+
+                .button:hover span {
+                    padding-right: 25px;
+                }
+
+                    .button:hover span:after {
+                        opacity: 1;
+                        right: 0;
+                    }
+        </style>-->
+    </head>
+    <body>
+        <br />
+        <br />
+        <div class="jumbotron">
+            <div class="text-center">
+                <h1> Lista de  <span style="color:hotpink"> Usuarios</span></h1>
+            </div>
+        </div>
+
+        <div class="card" style="background-color:cornflowerblue">
+            <div class="card-body">
+                <div class="container">
+                    <div class="card  text-white">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <table class="table table-sm table-hover ">
+                                    <tr class="table-primary text-center ">
+
+                                        <th> Id Usuario </th>
+                                        <th> Usuario</th>
+                                        <th> Nombre </th>
+                                        <th> Email </th>
+                                        <th> Teléfono</th>
+                                        <th></th>
+                                        <th></th>
+
+                                    </tr>
+                                    <tbody>
+                                        @foreach (var oElemento in Model)
+                                        {
+                                            <tr class="table-light text-center">
+                                                <td>@oElemento.IdUsuario</td>
+                                                <td>@oElemento.UserName</td>
+                                                <td>@oElemento.Name</td>
+                                                <td>@oElemento.Email</td>
+                                                <td>@oElemento.Telefono</td>
+                                                <td>
+                                                    <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#eliminarUsuario"> Eliminar</a>
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="eliminarUsuario" tabindex="-1" role="dialog" aria-labelledby="eliminarUsuarioTitle" aria-hidden="true">
+                                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="eliminarUsuarioLongTitle">Eliminar Usuario</h5>
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    ¿Está seguro que quiere eliminar el usuario?
+                                                                </div>
+                                                                <div class="modal-footer btn-group">
+                                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                                                    @Html.ActionLink("Aceptar", "Delete", "Usuario", new {IdUsuario = oElemento.IdUsuario },
+                                                                                           new { @class = "btn btn-danger" })
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-warning">
+                                                        @Html.ActionLink("Modificar", "Modificar","Usuario", new { IdUsuario = oElemento.IdUsuario })
+                                                    </button>
+                                                </td>
+
+
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <br />
+
+        <div class="col text-center">
+            <a class="btn-sm button" style="vertical-align:middle" asp-area="" asp-controller="Usuario" asp-action="Create"><span>Crear Usuario</span></a>
+        </div>
+    </body>
+</html>  
+}
+
