@@ -76,73 +76,73 @@
         </div>
 
         <div class="card" style="background-color:cornflowerblue">
-            <div class="card-body">
-                <div class="container">
-                    <div class="card  text-white">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <table class="table table-sm table-hover ">
-                                    <tr class="table-primary text-center ">
+           <!-- <div class="card-body">-->
+            <div class="container">
+                <br />
+                <div class="row">
 
-                                        <th> Id Usuario </th>
-                                        <th> Usuario</th>
-                                        <th> Nombre </th>
-                                        <th> Email </th>
-                                        <th> Teléfono</th>
-                                        <th></th>
-                                        <th></th>
+                    <div class="col-md-12" style="overflow-x:auto;">
+                        <table class="table table-sm table-hover ">
+                            <tr class="table-primary text-center ">
 
-                                    </tr>
-                                    <tbody>
-                                        @foreach (var oElemento in Model)
-                                        {
-                                            <tr class="table-light text-center">
-                                                <td>@oElemento.IdUsuario</td>
-                                                <td>@oElemento.UserName</td>
-                                                <td>@oElemento.Name</td>
-                                                <td>@oElemento.Email</td>
-                                                <td>@oElemento.Telefono</td>
-                                                <td>
-                                                    <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#eliminarUsuario"> Eliminar</a>
-                                                    <!-- Modal -->
-                                                    <div class="modal fade" id="eliminarUsuario" tabindex="-1" role="dialog" aria-labelledby="eliminarUsuarioTitle" aria-hidden="true">
-                                                        <div class="modal-dialog modal-dialog-centered" role="document">
-                                                            <div class="modal-content">
-                                                                <div class="modal-header">
-                                                                    <h5 class="modal-title" id="eliminarUsuarioLongTitle">Eliminar Usuario</h5>
-                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                        <span aria-hidden="true">&times;</span>
-                                                                    </button>
-                                                                </div>
-                                                                <div class="modal-body">
-                                                                    ¿Está seguro que quiere eliminar el usuario?
-                                                                </div>
-                                                                <div class="modal-footer btn-group">
-                                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                                                                    @Html.ActionLink("Aceptar", "Delete", "Usuario", new {IdUsuario = oElemento.IdUsuario },
-                                                                                           new { @class = "btn btn-danger" })
+                                <th> Id Usuario </th>
+                                <th> Usuario</th>
+                                <th> Nombre </th>
+                                <th> Email </th>
+                                <th> Teléfono</th>
+                                <th></th>
+                                <th></th>
 
-                                                                </div>
-                                                            </div>
+                            </tr>
+                            <tbody>
+                                @foreach (var oElemento in Model)
+                                {
+                                    <tr class="table-light text-center">
+                                        <td>@oElemento.IdUsuario</td>
+                                        <td>@oElemento.UserName</td>
+                                        <td>@oElemento.Name</td>
+                                        <td>@oElemento.Email</td>
+                                        <td>@oElemento.Telefono</td>
+                                        <td>
+                                            <a href="#" class="btn btn-dark" data-toggle="modal" data-target="#eliminarUsuario"> Eliminar</a>
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="eliminarUsuario" tabindex="-1" role="dialog" aria-labelledby="eliminarUsuarioTitle" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="eliminarUsuarioLongTitle">Eliminar Usuario</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            ¿Está seguro que quiere eliminar el usuario?
+                                                        </div>
+                                                        <div class="modal-footer btn-group">
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                                            @Html.ActionLink("Aceptar", "Delete", "Usuario", new { IdUsuario = oElemento.IdUsuario },
+                                                                                   new { @class = "btn btn-danger" })
+
                                                         </div>
                                                     </div>
+                                                </div>
+                                            </div>
 
-                                                </td>
-                                                <td>
-                                                    <button type="button" class="btn btn-warning">
-                                                        @Html.ActionLink("Modificar", "Modificar","Usuario", new { IdUsuario = oElemento.IdUsuario })
-                                                    </button>
-                                                </td>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-dark">
+                                                @Html.ActionLink("Modificar", "Modificar", "Usuario", new { IdUsuario = oElemento.IdUsuario })
+                                            </button>
+                                        </td>
 
 
-                                            </tr>
-                                        }
-                                    </tbody>
-                                </table>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
 
-                            </div>
-                        </div>
                     </div>
+
                 </div>
             </div>
         </div>
